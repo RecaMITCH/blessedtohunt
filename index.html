@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed to Hunt | Faith & Bowhunting Fellowship</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #2C4A2E;
+            --forest-dark: #1a2e1c;
+            --gold: #C8943E;
+            --gold-light: #E8B85E;
+            --cream: #FDF8F0;
+            --cream-dark: #F0E6D4;
+            --brown: #5C3D2E;
+            --brown-light: #7A5A4A;
+            --text-dark: #2A2218;
+            --text-med: #5A4E3E;
+            --text-light: #8A7E6E;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-dark);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        /* ─── NAVIGATION ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(44, 74, 46, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(200, 148, 62, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--cream);
+        }
+
+        .nav-logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .nav-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(253, 248, 240, 0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--forest-dark) !important;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background 0.2s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--cream);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 40%, var(--brown) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(200, 148, 62, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(200, 148, 62, 0.05) 0%, transparent 40%);
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z' fill='%23C8943E' fill-opacity='1'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(200, 148, 62, 0.15);
+            border: 1px solid rgba(200, 148, 62, 0.3);
+            color: var(--gold-light);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo-large {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--cream);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-verse {
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            margin: 1.5rem 0;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(253, 248, 240, 0.75);
+            max-width: 550px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--forest-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(200, 148, 62, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid rgba(253, 248, 240, 0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--cream);
+            background: rgba(253, 248, 240, 0.05);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(253, 248, 240, 0.4);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-scroll svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ─── SECTIONS ─── */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-med);
+            max-width: 600px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ─── ABOUT ─── */
+        #about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--brown) 100%);
+            border-radius: 16px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z' fill='%23C8943E' fill-opacity='0.08'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+        }
+
+        .about-image-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--cream);
+            padding: 2rem;
+        }
+
+        .about-image-text svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .about-image-text p {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: var(--gold-light);
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--forest);
+        }
+
+        .about-text p {
+            color: var(--text-med);
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .value-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(44, 74, 46, 0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--forest);
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        /* ─── WHAT WE DO ─── */
+        #whatwedo {
+            background: var(--cream);
+        }
+
+        .whatwedo-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .whatwedo-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatwedo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .whatwedo-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .whatwedo-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .whatwedo-card p {
+            color: var(--text-med);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ─── CHAPTERS ─── */
+        #chapters {
+            background: var(--forest-dark);
+            color: var(--cream);
+        }
+
+        #chapters .section-label {
+            color: var(--gold-light);
+        }
+
+        #chapters .section-title {
+            color: var(--cream);
+        }
+
+        #chapters .section-subtitle {
+            color: rgba(253, 248, 240, 0.7);
+        }
+
+        .chapter-card {
+            margin-top: 3rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(200, 148, 62, 0.15);
+            border-radius: 20px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .chapter-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-info .chapter-location {
+            font-size: 0.95rem;
+            color: rgba(253, 248, 240, 0.6);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chapter-info p {
+            color: rgba(253, 248, 240, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .chapter-detail {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .chapter-detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            margin-bottom: 0.3rem;
+        }
+
+        .chapter-detail-value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .chapter-map {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .chapter-map-placeholder {
+            text-align: center;
+            color: rgba(253, 248, 240, 0.4);
+        }
+
+        .chapter-map-placeholder svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .chapter-map-placeholder p {
+            font-size: 0.85rem;
+        }
+
+        .start-chapter {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(200, 148, 62, 0.1);
+        }
+
+        .start-chapter p {
+            color: rgba(253, 248, 240, 0.6);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* ─── EVENTS ─── */
+        #events {
+            background: var(--white);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .event-tag {
+            display: inline-block;
+            background: var(--forest);
+            color: var(--cream);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .event-tag.archery {
+            background: var(--brown);
+        }
+
+        .event-tag.social {
+            background: var(--gold);
+            color: var(--forest-dark);
+        }
+
+        .event-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card p {
+            color: var(--text-med);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .event-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ─── VERSE BANNER ─── */
+        .verse-banner {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .verse-banner blockquote {
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--cream);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .verse-banner cite {
+            display: block;
+            margin-top: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ─── CONTACT ─── */
+        #contact {
+            background: var(--cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            background: var(--cream);
+            color: var(--text-dark);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--forest);
+            box-shadow: 0 0 0 3px rgba(44, 74, 46, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--forest);
+            color: var(--cream);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .form-submit:hover {
+            background: var(--forest-dark);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info > p {
+            color: var(--text-med);
+            line-height: 1.7;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--forest);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-item-text h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item-text p {
+            color: var(--text-med);
+            font-size: 0.9rem;
+        }
+
+        .contact-verse {
+            background: rgba(44, 74, 46, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--gold);
+            margin-top: 1rem;
+        }
+
+        .contact-verse p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .contact-verse cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--forest-dark);
+            color: rgba(253, 248, 240, 0.6);
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-top: 1rem;
+            max-width: 300px;
+        }
+
+        .footer-brand .nav-logo {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col h4 {
+            color: var(--cream);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col a {
+            color: rgba(253, 248, 240, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom p {
+            opacity: 0.6;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-socials a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(253, 248, 240, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .footer-socials a:hover {
+            background: var(--gold);
+            color: var(--forest-dark);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 280px;
+            }
+
+            .whatwedo-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-card {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-map {
+                height: 200px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--forest-dark);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-top: 1px solid rgba(200, 148, 62, 0.1);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .mobile-toggle.open span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-toggle.open span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .chapter-card {
+                padding: 2rem;
+            }
+
+            .chapter-details {
+                grid-template-columns: 1fr;
+            }
+
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+            <svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="#C8943E" stroke-width="2" fill="none"/>
+                <path d="M24 8 L24 40 M16 24 L32 24" stroke="#C8943E" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M15 14 Q24 10 33 14" stroke="#C8943E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M17 36 L24 28 L31 36" stroke="#C8943E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="nav-logo-text">Blessed to Hunt</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#whatwedo">What We Do</a></li>
+            <li><a href="#chapters">Chapters</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+        <div class="hero-badge">A Nonprofit Fellowship</div>
+        <svg class="hero-logo-large" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="56" stroke="#C8943E" stroke-width="2" fill="none" opacity="0.3"/>
+            <circle cx="60" cy="60" r="48" stroke="#C8943E" stroke-width="1.5" fill="none" opacity="0.15"/>
+            <path d="M60 20 L60 100 M40 60 L80 60" stroke="#C8943E" stroke-width="3" stroke-linecap="round"/>
+            <path d="M35 32 Q60 22 85 32" stroke="#C8943E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M42 92 L60 72 L78 92" stroke="#C8943E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="60" cy="44" r="3" fill="#C8943E" opacity="0.4"/>
+        </svg>
+        <h1>Blessed <span>to</span> Hunt</h1>
+        <div class="hero-verse">"As the deer pants for streams of water, so my soul pants for you, my God."</div>
+        <p>A nonprofit fellowship blending Bible study and bowhunting. Growing in faith together, one Saturday morning at a time.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Join a Chapter</a>
+            <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+    <a href="#about" class="hero-scroll">
+        Scroll
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+    <div class="section-container">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Rooted in Faith,<br>Called to the Outdoors</h2>
+        <p class="section-subtitle">Blessed to Hunt was born from the belief that God's creation is the perfect backdrop for growing closer to Him and to one another.</p>
+
+        <div class="about-grid fade-in">
+            <div class="about-image">
+                <div class="about-image-text">
+                    <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M40 10 L40 70 M25 40 L55 40" stroke="#C8943E" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 20 Q40 12 60 20" stroke="#C8943E" fill="none" stroke-linecap="round"/>
+                        <path d="M25 62 L40 46 L55 62" stroke="#C8943E" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>Faith & Fellowship in the Field</p>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Where Scripture Meets the Stand</h3>
+                <p>Blessed to Hunt is a nonprofit organization that brings together men and women who share a love for bowhunting and a heart for God's Word. We believe that some of the deepest conversations about faith happen when you're surrounded by His creation.</p>
+                <p>Every Saturday morning, our members gather for Bible study and archery practice — building skills with a bow while building a deeper relationship with Christ and each other.</p>
+                <div class="about-values">
+                    <div class="value-item">
+                        <div class="value-icon">&#9769;</div>
+                        <span>Scripture-Centered</span>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#127993;</div>
+                        <span>Bowhunting Skills</span>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#129309;</div>
+                        <span>Brotherhood & Fellowship</span>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">&#127795;</div>
+                        <span>God's Creation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── WHAT WE DO ─── -->
+<section id="whatwedo">
+    <div class="section-container">
+        <div style="text-align:center;">
+            <span class="section-label">What We Do</span>
+            <h2 class="section-title">Faith, Fellowship & the Field</h2>
+            <p class="section-subtitle" style="margin:0 auto;">Our chapters gather weekly for three core activities designed to strengthen your walk with God and sharpen your skills in the field.</p>
+        </div>
+
+        <div class="whatwedo-cards">
+            <div class="whatwedo-card fade-in">
+                <div class="whatwedo-icon">&#128214;</div>
+                <h3>Bible Study</h3>
+                <p>Dig into God's Word together every Saturday morning. Our studies are designed for hunters — real talk, real questions, and real application for everyday life.</p>
+            </div>
+            <div class="whatwedo-card fade-in">
+                <div class="whatwedo-icon">&#127993;</div>
+                <h3>Archery Practice</h3>
+                <p>Sharpen your shooting after study. Whether you're picking up a bow for the first time or fine-tuning your form, all skill levels are welcome.</p>
+            </div>
+            <div class="whatwedo-card fade-in">
+                <div class="whatwedo-icon">&#127780;</div>
+                <h3>Community Hunts</h3>
+                <p>Throughout the season, we organize group hunts and outdoor fellowship events. Nothing beats sharing a hunt camp with brothers and sisters in Christ.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── VERSE BANNER ─── -->
+<div class="verse-banner">
+    <blockquote>
+        "The Lord God took the man and put him in the Garden of Eden to work it and take care of it."
+        <cite>Genesis 2:15</cite>
+    </blockquote>
+</div>
+
+<!-- ─── CHAPTERS ─── -->
+<section id="chapters">
+    <div class="section-container">
+        <span class="section-label">Our Chapters</span>
+        <h2 class="section-title">Find Your Community</h2>
+        <p class="section-subtitle">Blessed to Hunt grows through local chapters. Each chapter meets weekly for Bible study and archery practice.</p>
+
+        <div class="chapter-card fade-in">
+            <div class="chapter-info">
+                <h3>Cincinnati Chapter</h3>
+                <div class="chapter-location">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Southwest Ohio
+                </div>
+                <p>Our founding chapter, the Cincinnati Chapter, brings together bowhunters from across Southwest Ohio for Saturday morning fellowship, study, and shooting.</p>
+                <div class="chapter-details">
+                    <div class="chapter-detail">
+                        <div class="chapter-detail-label">When</div>
+                        <div class="chapter-detail-value">Saturdays, Morning</div>
+                    </div>
+                    <div class="chapter-detail">
+                        <div class="chapter-detail-label">Activities</div>
+                        <div class="chapter-detail-value">Bible Study + Archery</div>
+                    </div>
+                    <div class="chapter-detail">
+                        <div class="chapter-detail-label">Experience</div>
+                        <div class="chapter-detail-value">All Levels Welcome</div>
+                    </div>
+                    <div class="chapter-detail">
+                        <div class="chapter-detail-label">Cost</div>
+                        <div class="chapter-detail-value">Free to Join</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chapter-map">
+                <div class="chapter-map-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <p>Southwest Ohio<br>Cincinnati, OH</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="start-chapter">
+            <p>Want to bring Blessed to Hunt to your area?</p>
+            <a href="#contact" class="btn btn-primary">Start a Chapter</a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── EVENTS ─── -->
+<section id="events">
+    <div class="section-container">
+        <span class="section-label">Upcoming</span>
+        <h2 class="section-title">Join Us This Week</h2>
+        <p class="section-subtitle">Check out what's happening at our chapters. All events are free and open to newcomers.</p>
+
+        <div class="events-grid">
+            <div class="event-card fade-in">
+                <span class="event-tag">Bible Study</span>
+                <h3>Saturday Morning Study</h3>
+                <p>Join us as we continue our series walking through the Psalms. Coffee provided, bring your Bible and a friend.</p>
+                <div class="event-meta">
+                    <span>&#128197; Every Saturday</span>
+                    <span>&#128336; Morning</span>
+                </div>
+            </div>
+            <div class="event-card fade-in">
+                <span class="event-tag archery">Archery</span>
+                <h3>Open Archery Practice</h3>
+                <p>Stick around after study to shoot. Bring your bow or try one of ours. Coaching available for beginners.</p>
+                <div class="event-meta">
+                    <span>&#128197; Every Saturday</span>
+                    <span>&#128336; After Bible Study</span>
+                </div>
+            </div>
+            <div class="event-card fade-in">
+                <span class="event-tag social">Fellowship</span>
+                <h3>Spring Cookout & Shoot</h3>
+                <p>Kick off the season with a 3D archery shoot and cookout. Bring the family — all ages welcome.</p>
+                <div class="event-meta">
+                    <span>&#128197; Coming Soon</span>
+                    <span>&#128205; TBD</span>
+                </div>
+            </div>
+            <div class="event-card fade-in">
+                <span class="event-tag">Bible Study</span>
+                <h3>Men's Devotional Series</h3>
+                <p>A deeper dive into what it means to be a man of God in the field and in everyday life.</p>
+                <div class="event-meta">
+                    <span>&#128197; Monthly</span>
+                    <span>&#128336; Evening</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+    <div class="section-container">
+        <span class="section-label">Get Involved</span>
+        <h2 class="section-title">Join the Fellowship</h2>
+        <p class="section-subtitle">Whether you want to visit a chapter, start one in your area, or just learn more — we'd love to hear from you.</p>
+
+        <div class="contact-grid">
+            <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest">I'm Interested In</label>
+                    <select id="interest" name="interest">
+                        <option value="">Select an option</option>
+                        <option value="visit">Visiting a Saturday gathering</option>
+                        <option value="join">Joining the Cincinnati Chapter</option>
+                        <option value="start">Starting a new chapter</option>
+                        <option value="volunteer">Volunteering or leading</option>
+                        <option value="other">Something else</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about yourself or ask a question..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+            <div class="contact-info fade-in">
+                <h3>We'd Love to Connect</h3>
+                <p>Blessed to Hunt is built on relationships. Reach out and let's start a conversation about faith, fellowship, and the great outdoors.</p>
+
+                <div class="contact-item">
+                    <div class="contact-icon">&#9993;</div>
+                    <div class="contact-item-text">
+                        <h4>Email Us</h4>
+                        <p>info@blessedtohunt.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">&#128205;</div>
+                    <div class="contact-item-text">
+                        <h4>Cincinnati Chapter</h4>
+                        <p>Southwest Ohio<br>Saturdays, Morning</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">&#128241;</div>
+                    <div class="contact-item-text">
+                        <h4>Follow Along</h4>
+                        <p>Facebook &middot; Instagram</p>
+                    </div>
+                </div>
+
+                <div class="contact-verse">
+                    <p>"For where two or three gather in my name, there am I with them."</p>
+                    <cite>Matthew 18:20</cite>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="#hero" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" stroke="#C8943E" stroke-width="2" fill="none"/>
+                    <path d="M24 8 L24 40 M16 24 L32 24" stroke="#C8943E" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M15 14 Q24 10 33 14" stroke="#C8943E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M17 36 L24 28 L31 36" stroke="#C8943E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-logo-text">Blessed to Hunt</span>
+            </a>
+            <p>A nonprofit fellowship blending Bible study and bowhunting. Growing in faith, one Saturday morning at a time.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#whatwedo">What We Do</a></li>
+                <li><a href="#chapters">Chapters</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="mailto:info@blessedtohunt.com">Email Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Blessed to Hunt. All rights reserved. 501(c)(3) Nonprofit Organization.</p>
+        <div class="footer-socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">&#9737;</a>
+            <a href="#" aria-label="YouTube">&#9654;</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+        sections.forEach(section => {
+            const top = section.offsetTop - 100;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+            if (link) {
+                link.classList.toggle('active', scrollY >= top && scrollY < top + height);
+            }
+        });
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form handler
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        btn.textContent = 'Message Sent!';
+        btn.style.background = '#C8943E';
+        setTimeout(() => {
+            btn.textContent = 'Send Message';
+            btn.style.background = '';
+            e.target.reset();
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
