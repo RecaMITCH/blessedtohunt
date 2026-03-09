@@ -4,8 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blessed to Hunt | Faith & Bowhunting Fellowship</title>
+    <meta name="description" content="Blessed to Hunt is a nonprofit fellowship combining Bible study and bowhunting in Southwest Ohio. Join our Saturday morning gatherings for scripture, archery, and brotherhood.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.blessedtohunt.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blessed to Hunt | Faith & Bowhunting Fellowship">
+    <meta property="og:description" content="A nonprofit fellowship combining Bible study and bowhunting. Join our Saturday morning gatherings for scripture, archery, and brotherhood.">
+    <meta property="og:url" content="https://www.blessedtohunt.com/">
+    <meta property="og:image" content="https://www.blessedtohunt.com/logo.png">
+    <meta property="og:site_name" content="Blessed to Hunt">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blessed to Hunt | Faith & Bowhunting Fellowship">
+    <meta name="twitter:description" content="A nonprofit fellowship combining Bible study and bowhunting. Join our Saturday morning gatherings for scripture, archery, and brotherhood.">
+    <meta name="twitter:image" content="https://www.blessedtohunt.com/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NonprofitOrganization",
+        "name": "Blessed to Hunt",
+        "url": "https://www.blessedtohunt.com",
+        "logo": "https://www.blessedtohunt.com/logo.png",
+        "description": "A nonprofit fellowship combining Bible study and bowhunting in Southwest Ohio.",
+        "email": "info@blessedtohunt.com",
+        "nonprofitStatus": "501(c)(3)",
+        "areaServed": {
+            "@type": "Place",
+            "name": "Southwest Ohio"
+        },
+        "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Blessed to Hunt Saturday Gathering",
+        "description": "Weekly fellowship combining Bible study and bowhunting practice.",
+        "eventSchedule": {
+            "@type": "Schedule",
+            "byDay": "https://schema.org/Saturday",
+            "startTime": "08:00",
+            "endTime": "12:00",
+            "repeatFrequency": "P1W"
+        },
+        "location": {
+            "@type": "Place",
+            "name": "Southwest Ohio",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "OH",
+                "addressCountry": "US"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "Blessed to Hunt",
+            "url": "https://www.blessedtohunt.com"
+        },
+        "isAccessibleForFree": true
+    }
+    </script>
+
+    <noscript><style>.fade-in { opacity: 1 !important; transform: none !important; }</style></noscript>
     <style>
         :root {
             --forest: #2C4A2E;
@@ -1054,12 +1129,28 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: var(--forest);
+            color: var(--cream);
+            padding: 0.75rem 1.5rem;
+            z-index: 10000;
+            font-size: 1rem;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ─── NAVIGATION ─── -->
-<nav id="navbar">
+<nav id="navbar" aria-label="Main navigation">
     <div class="nav-container">
         <a href="#hero" class="nav-logo">
             <img class="nav-logo-icon" src="logo.png" alt="Blessed to Hunt Logo">
@@ -1071,13 +1162,15 @@
             <li><a href="#events">Events</a></li>
             <li><a href="#contact" class="nav-cta">Get Involved</a></li>
         </ul>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
 </nav>
+
+<main id="main-content">
 
 <!-- ─── HERO ─── -->
 <section class="hero" id="hero">
@@ -1347,12 +1440,14 @@
     </div>
 </section>
 
+</main>
+
 <!-- ─── FOOTER ─── -->
 <footer>
     <div class="footer-container">
         <div class="footer-brand">
             <a href="#hero" class="nav-logo">
-                <img class="nav-logo-icon" src="logo.png" alt="Blessed to Hunt Logo">
+                <img class="nav-logo-icon" src="logo.png" alt="Blessed to Hunt Logo" loading="lazy">
             </a>
             <p>A nonprofit fellowship blending Bible study and bowhunting. Growing in faith, one Saturday morning at a time.</p>
         </div>
@@ -1394,6 +1489,8 @@
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('open');
         navLinks.classList.toggle('open');
+        const expanded = mobileToggle.classList.contains('open');
+        mobileToggle.setAttribute('aria-expanded', expanded);
     });
 
     // Close mobile menu on link click
