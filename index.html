@@ -235,13 +235,14 @@
 
         /* ─── HERO ─── */
         .hero {
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest) 40%, var(--brown) 100%);
             overflow: hidden;
+            padding-top: 72px;
         }
 
         .hero::before {
@@ -264,9 +265,23 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            text-align: center;
-            max-width: 800px;
-            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+            padding: 3rem 2rem;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-badge {
@@ -280,18 +295,19 @@
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .hero-logo-large {
-            width: auto;
-            height: 150px;
-            margin: 0 auto 2rem;
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             color: var(--cream);
             font-weight: 700;
             line-height: 1.15;
@@ -304,17 +320,17 @@
 
         .hero-verse {
             font-family: 'Caveat', cursive;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--gold-light);
-            margin: 1.5rem 0;
+            margin: 1.25rem 0;
             opacity: 0.9;
         }
 
-        .hero p {
-            font-size: 1.15rem;
+        .hero-text p {
+            font-size: 1.1rem;
             color: rgba(253, 248, 240, 0.75);
-            max-width: 550px;
-            margin: 0 auto 2.5rem;
+            max-width: 500px;
+            margin: 0 0 2rem;
             font-weight: 300;
             line-height: 1.7;
         }
@@ -322,7 +338,6 @@
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
@@ -1177,6 +1192,44 @@
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-text {
+                text-align: center;
+                order: 2;
+            }
+
+            .hero-visual {
+                order: 1;
+            }
+
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-logo-large {
+                max-width: 240px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 72px;
+                padding-bottom: 3rem;
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+
             .about-grid,
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -1326,14 +1379,18 @@
 <section class="hero" id="hero">
     <div class="hero-bg-pattern"></div>
     <div class="hero-content">
-        <div class="hero-badge">A Nonprofit Fellowship</div>
-        <img class="hero-logo-large" src="logo.png" alt="Blessed to Hunt Logo">
-        <h1>Blessed <span>to</span> Hunt</h1>
-        <div class="hero-verse">"As the deer pants for streams of water, so my soul pants for you, my God."</div>
-        <p>A nonprofit fellowship blending Bible study and bowhunting. Growing in faith together, one Saturday morning at a time.</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Join a Chapter</a>
-            <a href="#about" class="btn btn-outline">Learn More</a>
+        <div class="hero-text">
+            <div class="hero-badge">A Nonprofit Fellowship</div>
+            <h1>Blessed <span>to</span> Hunt</h1>
+            <div class="hero-verse">"As the deer pants for streams of water, so my soul pants for you, my God."</div>
+            <p>A nonprofit fellowship blending Bible study and bowhunting. Growing in faith together, one Saturday morning at a time.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Join a Chapter</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img class="hero-logo-large" src="logo.png" alt="Blessed to Hunt Logo">
         </div>
     </div>
     <a href="#about" class="hero-scroll">
