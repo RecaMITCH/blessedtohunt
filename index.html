@@ -1034,6 +1034,54 @@
             color: var(--text-dark);
         }
 
+        /* ─── PODCAST ─── */
+        #podcast {
+            background: var(--forest-dark);
+            color: var(--cream);
+        }
+
+        #podcast .section-label {
+            color: var(--gold);
+        }
+
+        #podcast .section-title {
+            color: var(--cream);
+        }
+
+        #podcast .section-subtitle {
+            color: rgba(253, 248, 240, 0.7);
+        }
+
+        .podcast-container {
+            max-width: 800px;
+            margin: 2.5rem auto 0;
+        }
+
+        .podcast-container iframe {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .podcast-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .podcast-links a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .podcast-links a:hover {
+            color: var(--gold-light);
+        }
+
         /* ─── FOOTER ─── */
         footer {
             background: var(--forest-dark);
@@ -1260,6 +1308,7 @@
             <li><a href="#whatwedo">What We Do</a></li>
             <li><a href="#chapters">Chapters</a></li>
             <li><a href="#events">Events</a></li>
+            <li><a href="#podcast">Podcast</a></li>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#contact" class="nav-cta">Get Involved</a></li>
         </ul>
@@ -1472,6 +1521,23 @@
     </div>
 </section>
 
+<!-- ─── PODCAST ─── -->
+<section id="podcast">
+    <div class="section-container">
+        <span class="section-label">Listen In</span>
+        <h2 class="section-title">The Blessed to Hunt Podcast</h2>
+        <p class="section-subtitle">Stories from the field, conversations about faith, and everything in between. New episodes weekly.</p>
+
+        <div class="podcast-container fade-in">
+            <iframe src="https://open.spotify.com/embed/show/45fs4cwaUll9YKAo42tydV/video?utm_source=generator" height="351" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="podcast-links fade-in">
+            <a href="https://open.spotify.com/show/45fs4cwaUll9YKAo42tydV" target="_blank" rel="noopener">Listen on Spotify &rarr;</a>
+        </div>
+    </div>
+</section>
+
 <!-- ─── SHOP ─── -->
 <section id="shop">
     <div class="section-container">
@@ -1632,6 +1698,7 @@
                 <li><a href="#whatwedo">What We Do</a></li>
                 <li><a href="#chapters">Chapters</a></li>
                 <li><a href="#events">Events</a></li>
+                <li><a href="#podcast">Podcast</a></li>
                 <li><a href="#shop">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
