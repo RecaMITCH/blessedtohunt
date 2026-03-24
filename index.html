@@ -933,6 +933,107 @@
             font-weight: 600;
         }
 
+        /* ─── SHOP ─── */
+        #shop {
+            background: var(--white);
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .shop-card {
+            background: var(--cream);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .shop-card-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .shop-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .shop-card-image .placeholder-icon {
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+
+        .shop-card-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        .shop-card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .shop-card-body .shop-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .shop-card-body .shop-desc {
+            font-size: 0.85rem;
+            color: var(--text-med);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .btn-shop {
+            display: inline-block;
+            padding: 0.65rem 1.5rem;
+            background: var(--forest);
+            color: var(--cream);
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-shop:hover {
+            background: var(--forest-dark);
+        }
+
+        .shop-note {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-med);
+            font-size: 0.9rem;
+        }
+
+        .shop-note strong {
+            color: var(--text-dark);
+        }
+
         /* ─── FOOTER ─── */
         footer {
             background: var(--forest-dark);
@@ -1159,6 +1260,7 @@
             <li><a href="#whatwedo">What We Do</a></li>
             <li><a href="#chapters">Chapters</a></li>
             <li><a href="#events">Events</a></li>
+            <li><a href="#shop">Shop</a></li>
             <li><a href="#contact" class="nav-cta">Get Involved</a></li>
         </ul>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -1370,6 +1472,55 @@
     </div>
 </section>
 
+<!-- ─── SHOP ─── -->
+<section id="shop">
+    <div class="section-container">
+        <span class="section-label">Gear Up</span>
+        <h2 class="section-title">Shop Blessed to Hunt</h2>
+        <p class="section-subtitle">Rep the fellowship. All proceeds support our mission to grow community through faith and the outdoors.</p>
+
+        <div class="shop-grid fade-in">
+            <div class="shop-card">
+                <div class="shop-card-image">
+                    <span class="placeholder-icon">&#128085;</span>
+                </div>
+                <div class="shop-card-body">
+                    <h3>BTH Classic Tee</h3>
+                    <div class="shop-price">$28</div>
+                    <p class="shop-desc">Soft cotton tee with the Blessed to Hunt logo. Available in forest green, black, and sand.</p>
+                    <a href="#" class="btn-shop">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="shop-card">
+                <div class="shop-card-image">
+                    <span class="placeholder-icon">&#129506;</span>
+                </div>
+                <div class="shop-card-body">
+                    <h3>BTH Camo Trucker Hat</h3>
+                    <div class="shop-price">$32</div>
+                    <p class="shop-desc">Richardson-style trucker hat with embroidered BTH logo. One size fits most.</p>
+                    <a href="#" class="btn-shop">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="shop-card">
+                <div class="shop-card-image">
+                    <span class="placeholder-icon">&#128085;</span>
+                </div>
+                <div class="shop-card-body">
+                    <h3>Psalm 42 Long Sleeve</h3>
+                    <div class="shop-price">$34</div>
+                    <p class="shop-desc">"As the deer pants for streams of water" on the back. Comfort-fit long sleeve in cream and olive.</p>
+                    <a href="#" class="btn-shop">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="shop-note fade-in"><strong>100% of proceeds</strong> go toward supporting Blessed to Hunt chapters and community events.</p>
+    </div>
+</section>
+
 <!-- ─── CONTACT ─── -->
 <section id="contact">
     <div class="section-container">
@@ -1457,6 +1608,7 @@
                 <li><a href="#whatwedo">What We Do</a></li>
                 <li><a href="#chapters">Chapters</a></li>
                 <li><a href="#events">Events</a></li>
+                <li><a href="#shop">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
