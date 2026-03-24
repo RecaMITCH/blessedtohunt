@@ -79,6 +79,137 @@
     }
     </script>
 
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Blessed to Hunt Classic Unisex Tee",
+            "description": "Premium unisex tee with the BTH logo. Available in athletic heather, black, charcoal, and Comfort Colors options.",
+            "image": "https://www.blessedtohunt.com/bonfire-design.png",
+            "brand": {"@type": "Brand", "name": "Blessed to Hunt"},
+            "offers": {
+                "@type": "Offer",
+                "price": "24.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.bonfire.com/blessed-to-hunt/"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Blessed to Hunt Youth Tee",
+            "description": "Youth unisex tee available in carolina blue, irish green, red, royal blue, and sport grey.",
+            "image": "https://www.blessedtohunt.com/bonfire-design.png",
+            "brand": {"@type": "Brand", "name": "Blessed to Hunt"},
+            "offers": {
+                "@type": "Offer",
+                "price": "24.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.bonfire.com/blessed-to-hunt/"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Blessed to Hunt Softstyle Crewneck Sweatshirt",
+            "description": "Cozy softstyle crewneck sweatshirt with the BTH logo. Available in black, sand, and stone blue.",
+            "image": "https://www.blessedtohunt.com/bonfire-design.png",
+            "brand": {"@type": "Brand", "name": "Blessed to Hunt"},
+            "offers": {
+                "@type": "Offer",
+                "price": "39.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.bonfire.com/blessed-to-hunt/"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Blessed to Hunt Pullover Hoodie",
+            "description": "Gildan Softstyle pullover hoodie. Available in black, charcoal, and sand.",
+            "image": "https://www.blessedtohunt.com/bonfire-design.png",
+            "brand": {"@type": "Brand", "name": "Blessed to Hunt"},
+            "offers": {
+                "@type": "Offer",
+                "price": "39.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.bonfire.com/blessed-to-hunt/"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Blessed to Hunt Blaze Orange Beanie",
+            "description": "Printed cuffed beanie in blaze orange.",
+            "image": "https://www.blessedtohunt.com/bonfire-design.png",
+            "brand": {"@type": "Brand", "name": "Blessed to Hunt"},
+            "offers": {
+                "@type": "Offer",
+                "price": "24.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://www.bonfire.com/blessed-to-hunt-beanie/"
+            }
+        }
+    ]
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Blessed to Hunt?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Blessed to Hunt is a 501(c)(3) nonprofit fellowship that combines Bible study and bowhunting. We gather every Saturday morning for scripture, archery practice, and brotherhood in Southwest Ohio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who can join Blessed to Hunt?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Everyone is welcome regardless of experience level. Whether you're a seasoned bowhunter or picking up a bow for the first time, our chapters are open to men, women, and youth who want to grow in faith and enjoy the outdoors."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to join?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Blessed to Hunt gatherings are completely free. We are a nonprofit organization and our Saturday morning Bible study and archery sessions are open to everyone at no cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where are Blessed to Hunt chapters located?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our founding chapter is located in the Cincinnati, Ohio area (Southwest Ohio). We are actively looking to expand to new locations. If you're interested in starting a chapter in your area, contact us."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I start a Blessed to Hunt chapter in my area?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We'd love to help you start a chapter! Reach out through our contact form or email info@blessedtohunt.com. We'll provide guidance on organizing gatherings, leading Bible studies, and building a local community of faith-driven hunters."
+                }
+            }
+        ]
+    }
+    </script>
+
     <noscript><style>.fade-in { opacity: 1 !important; transform: none !important; }</style></noscript>
     <style>
         :root {
@@ -111,6 +242,16 @@
             color: var(--text-dark);
             background: var(--cream);
             line-height: 1.6;
+        }
+
+        /* Global focus styles for keyboard navigation */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible,
+        .btn-shop:focus-visible,
+        .nav-cta:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
         }
 
         /* ─── NAVIGATION ─── */
@@ -330,7 +471,7 @@
 
         .hero-text p {
             font-size: 1.1rem;
-            color: rgba(253, 248, 240, 0.75);
+            color: rgba(253, 248, 240, 0.88);
             max-width: 500px;
             margin: 0 0 2rem;
             font-weight: 300;
@@ -826,7 +967,7 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--forest);
-            box-shadow: 0 0 0 3px rgba(44, 74, 46, 0.1);
+            box-shadow: 0 0 0 3px rgba(44, 74, 46, 0.35);
         }
 
         .form-group textarea {
@@ -1356,7 +1497,7 @@
         <div class="hero-text">
             <div class="hero-badge">A Nonprofit Fellowship</div>
             <h1>Blessed <span>to</span> Hunt</h1>
-            <div class="hero-verse">"As the deer pants for streams of water, so my soul pants for you, my God."</div>
+            <div class="hero-verse">"As the deer pants for streams of water, so my soul pants for you, my God." — Psalm 42:1</div>
             <p>A nonprofit fellowship blending Bible study and bowhunting. Growing in faith together, one Saturday morning at a time.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Join a Chapter</a>
@@ -1378,7 +1519,7 @@
     <div class="section-container">
         <span class="section-label">Our Story</span>
         <h2 class="section-title">Rooted in Faith,<br>Called to the Outdoors</h2>
-        <p class="section-subtitle">Blessed to Hunt was born from the belief that God's creation is the perfect backdrop for growing closer to Him and to one another.</p>
+        <p class="section-subtitle">Blessed to Hunt is a Christian bowhunting nonprofit born from the belief that God's creation is the perfect backdrop for growing closer to Him and to one another.</p>
 
         <div class="about-grid fade-in">
             <div class="about-image">
@@ -1386,8 +1527,8 @@
             </div>
             <div class="about-text">
                 <h3>Where Scripture Meets the Stand</h3>
-                <p>Blessed to Hunt is a nonprofit organization that brings together men and women who share a love for bowhunting and a heart for God's Word. We believe that some of the deepest conversations about faith happen when you're surrounded by His creation.</p>
-                <p>Every Saturday morning, our members gather for Bible study and archery practice — building skills with a bow while building a deeper relationship with Christ and each other.</p>
+                <p>Blessed to Hunt is an outdoor ministry and faith-based hunting organization that brings together men, women, and youth who share a love for bowhunting and a heart for God's Word. As a Christian archery group based in Cincinnati, Ohio, we believe that some of the deepest conversations about faith happen when you're surrounded by His creation.</p>
+                <p>Every Saturday morning, our members gather for Bible study and archery practice — building skills with a bow while building a deeper relationship with Christ and each other. Whether you call it a hunting fellowship, an outdoor ministry, or just church in the woods, everyone is welcome.</p>
                 <div class="about-values">
                     <div class="value-item">
                         <div class="value-icon">&#9769;</div>
@@ -1419,7 +1560,7 @@
         <p class="section-subtitle">Stories from the field, conversations about faith, and everything in between. New episodes weekly.</p>
 
         <div class="podcast-container fade-in">
-            <iframe src="https://open.spotify.com/embed/show/45fs4cwaUll9YKAo42tydV/video?utm_source=generator" height="351" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe src="https://open.spotify.com/embed/show/45fs4cwaUll9YKAo42tydV/video?utm_source=generator" height="351" style="border:0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Blessed to Hunt Podcast on Spotify"></iframe>
         </div>
 
         <div class="podcast-links fade-in">
@@ -1470,7 +1611,7 @@
     <div class="section-container">
         <span class="section-label">Our Chapters</span>
         <h2 class="section-title">Find Your Community</h2>
-        <p class="section-subtitle">Blessed to Hunt grows through local chapters. Each chapter meets weekly for Bible study and archery practice.</p>
+        <p class="section-subtitle">Blessed to Hunt grows through local chapters across Ohio and beyond. Each chapter meets weekly for Bible study and archery practice — a faith-driven hunting community near you.</p>
 
         <div class="chapter-card fade-in">
             <div class="chapter-info">
@@ -1643,7 +1784,7 @@
         <p class="section-subtitle">Whether you want to visit a chapter, start one in your area, or just learn more — we'd love to hear from you.</p>
 
         <div class="contact-grid">
-            <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+            <form class="contact-form fade-in" action="https://formspree.io/f/info@blessedtohunt.com" method="POST" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1794,14 +1935,35 @@
     // Form handler
     function handleSubmit(e) {
         e.preventDefault();
-        const btn = e.target.querySelector('.form-submit');
-        btn.textContent = 'Message Sent!';
-        btn.style.background = '#C8943E';
-        setTimeout(() => {
-            btn.textContent = 'Send Message';
-            btn.style.background = '';
-            e.target.reset();
-        }, 3000);
+        const form = e.target;
+        const btn = form.querySelector('.form-submit');
+        const data = new FormData(form);
+
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                btn.textContent = 'Message Sent!';
+                btn.style.background = '#C8943E';
+                setTimeout(() => {
+                    btn.textContent = 'Send Message';
+                    btn.style.background = '';
+                    btn.disabled = false;
+                    form.reset();
+                }, 3000);
+            } else {
+                btn.textContent = 'Error — Try Again';
+                btn.disabled = false;
+            }
+        }).catch(() => {
+            btn.textContent = 'Error — Try Again';
+            btn.disabled = false;
+        });
     }
 </script>
 
