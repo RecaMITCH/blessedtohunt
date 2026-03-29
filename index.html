@@ -1164,6 +1164,301 @@
             color: var(--text-dark);
         }
 
+        /* ─── IMPACT STATS ─── */
+        .stats-bar {
+            background: var(--forest);
+            padding: 2.5rem 2rem;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: var(--cream);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(253, 248, 240, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* ─── EPISODE CAROUSEL ─── */
+        .episode-carousel {
+            position: relative;
+            max-width: 1100px;
+            margin: 2.5rem auto 0;
+        }
+
+        .episode-track {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 0.5rem;
+        }
+
+        .episode-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .episode-card {
+            flex: 0 0 320px;
+            scroll-snap-align: start;
+            background: rgba(253, 248, 240, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(200, 148, 62, 0.15);
+        }
+
+        .episode-card iframe {
+            width: 100%;
+            height: 152px;
+            border: none;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .episode-card-body {
+            padding: 0.75rem 1rem 1rem;
+        }
+
+        .episode-card-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: var(--cream);
+            margin-bottom: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .episode-card-body p {
+            font-size: 0.8rem;
+            color: rgba(253, 248, 240, 0.55);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(200, 148, 62, 0.3);
+            background: rgba(200, 148, 62, 0.1);
+            color: var(--gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(200, 148, 62, 0.25);
+        }
+
+        /* ─── VERSE SIGNUP ─── */
+        .verse-signup {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--brown) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .verse-signup-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .verse-signup h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .verse-signup .verse-preview {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin: 1rem 0 1.5rem;
+            opacity: 0.9;
+        }
+
+        .verse-signup p {
+            color: rgba(253, 248, 240, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .verse-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .verse-form input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid rgba(200, 148, 62, 0.3);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: var(--cream);
+            font-size: 0.95rem;
+        }
+
+        .verse-form input::placeholder {
+            color: rgba(253, 248, 240, 0.4);
+        }
+
+        .verse-form button {
+            padding: 12px 24px;
+            background: var(--gold);
+            color: var(--forest-dark);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .verse-form button:hover {
+            background: var(--gold-light);
+        }
+
+        /* ─── TESTIMONIALS ─── */
+        .testimonials {
+            background: var(--cream-dark);
+            padding: 5rem 2rem;
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 2.5rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .testimonial-card blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--forest);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* ─── DONATE ─── */
+        .donate-banner {
+            background: var(--gold);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .donate-banner-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .donate-banner p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--forest-dark);
+            font-weight: 600;
+        }
+
+        .btn-donate {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--forest-dark);
+            color: var(--cream);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-donate:hover {
+            background: var(--forest);
+            transform: translateY(-2px);
+        }
+
         /* ─── PODCAST ─── */
         #podcast {
             background: var(--forest-dark);
@@ -1307,6 +1602,28 @@
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .episode-card {
+                flex: 0 0 280px;
+            }
+
+            .verse-form {
+                flex-direction: column;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .donate-banner-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -1514,6 +1831,28 @@
     </a>
 </section>
 
+<!-- ─── IMPACT STATS ─── -->
+<div class="stats-bar">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Members</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Saturday Gatherings</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Podcast Episodes</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter &amp; Growing</div>
+        </div>
+    </div>
+</div>
+
 <!-- ─── ABOUT ─── -->
 <section id="about">
     <div class="section-container">
@@ -1559,12 +1898,87 @@
         <h2 class="section-title">The Blessed to Hunt Podcast</h2>
         <p class="section-subtitle">Stories from the field, conversations about faith, and everything in between. New episodes weekly.</p>
 
-        <div class="podcast-container fade-in">
-            <iframe src="https://open.spotify.com/embed/show/45fs4cwaUll9YKAo42tydV/video?utm_source=generator" height="351" style="border:0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Blessed to Hunt Podcast on Spotify"></iframe>
+        <div class="episode-carousel fade-in">
+            <div class="episode-track" id="episodeTrack">
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/7cpSzlZWpsv2tKy4e4j5TG?theme=0" loading="lazy" title="James 2:1-10"></iframe>
+                    <div class="episode-card-body">
+                        <h4>James 2:1-10</h4>
+                        <p>God calls us to treat one another the same whether rich or poor.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/6F3NWKgxlXs1FcEtivslrz?theme=0" loading="lazy" title="James 1:22-27"></iframe>
+                    <div class="episode-card-body">
+                        <h4>James 1:22-27</h4>
+                        <p>How to live out the living word — be doers, not just hearers.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/1wAKwD6MKqZoHxcp514LGB?theme=0" loading="lazy" title="A Tribute to Frank York"></iframe>
+                    <div class="episode-card-body">
+                        <h4>A Tribute to Frank York</h4>
+                        <p>A story of spiritual salvation and family legacy through Jesus's power.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/2DTTBBJFNv6wTrFWZha9VJ?theme=0" loading="lazy" title="PREPARE - James 1:13-21"></iframe>
+                    <div class="episode-card-body">
+                        <h4>PREPARE — James 1:13-21</h4>
+                        <p>Spring preparation exploring temptation, desires, and God's perfect gifts.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/2bIl89G6aFMFWIdlnnyBDE?theme=0" loading="lazy" title="James 1:9-12"></iframe>
+                    <div class="episode-card-body">
+                        <h4>James 1:9-12</h4>
+                        <p>Humility, wealth, and perseverance under trials.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/3y5LLR0EIYAdNk2oam127n?theme=0" loading="lazy" title="Book of James - James 1:1-8"></iframe>
+                    <div class="episode-card-body">
+                        <h4>Book of James — 1:1-8</h4>
+                        <p>Launching our James study on trials and the testing of faith.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/7GyAzd9QAAc8k6Wl6WEKdd?theme=0" loading="lazy" title="Bible Study #8 - Luke 5:36-38"></iframe>
+                    <div class="episode-card-body">
+                        <h4>Luke 5:36-38</h4>
+                        <p>Becoming new through Christ — the parable of wineskins.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/4mO1HeybMJASZWYYYliuLR?theme=0" loading="lazy" title="2025 Recap - God's Unending Love"></iframe>
+                    <div class="episode-card-body">
+                        <h4>2025 Recap</h4>
+                        <p>Reflecting on God's encounters throughout 2025.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/2DR6cpAwrVMaACxGLWuJD1?theme=0" loading="lazy" title="God The Father / Buck Stories"></iframe>
+                    <div class="episode-card-body">
+                        <h4>God The Father / Buck Stories</h4>
+                        <p>Hunting stories combined with discussion of God as Father.</p>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <iframe src="https://open.spotify.com/embed/episode/4ZpMulEt4DpeKmI6BlSUUO?theme=0" loading="lazy" title="Building a Legacy w/ Chris Kramer"></iframe>
+                    <div class="episode-card-body">
+                        <h4>Building a Legacy w/ Chris Kramer</h4>
+                        <p>Faith, family, and business ownership.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-btn" onclick="document.getElementById('episodeTrack').scrollBy({left:-340,behavior:'smooth'})" aria-label="Previous episodes">&larr;</button>
+                <button class="carousel-btn" onclick="document.getElementById('episodeTrack').scrollBy({left:340,behavior:'smooth'})" aria-label="Next episodes">&rarr;</button>
+            </div>
         </div>
 
         <div class="podcast-links fade-in">
-            <a href="https://open.spotify.com/show/45fs4cwaUll9YKAo42tydV" target="_blank" rel="noopener">Listen on Spotify &rarr;</a>
+            <a href="https://open.spotify.com/show/45fs4cwaUll9YKAo42tydV" target="_blank" rel="noopener">See All Episodes on Spotify &rarr;</a>
         </div>
     </div>
 </section>
@@ -1598,12 +2012,19 @@
     </div>
 </section>
 
-<!-- ─── VERSE BANNER ─── -->
-<div class="verse-banner">
-    <blockquote>
-        "The Lord God took the man and put him in the Garden of Eden to work it and take care of it."
-        <cite>Genesis 2:15</cite>
-    </blockquote>
+<!-- ─── VERSE OF THE WEEK SIGNUP ─── -->
+<div class="verse-signup">
+    <div class="verse-signup-inner fade-in">
+        <h2>Verse of the Week</h2>
+        <div class="verse-preview">"The Lord God took the man and put him in the Garden of Eden to work it and take care of it." — Genesis 2:15</div>
+        <p>Get a weekly verse and devotional delivered straight to your inbox every Sunday evening. Start your week rooted in the Word.</p>
+        <form class="verse-form" action="https://formspree.io/f/info@blessedtohunt.com" method="POST" onsubmit="handleVerseSignup(event)">
+            <input type="hidden" name="_subject" value="Verse of the Week Signup">
+            <input type="hidden" name="type" value="verse-signup">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address for verse of the week">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
 </div>
 
 <!-- ─── CHAPTERS ─── -->
@@ -1651,6 +2072,46 @@
         <div class="start-chapter">
             <p>Want to bring Blessed to Hunt to your area?</p>
             <a href="#contact" class="btn btn-primary">Start a Chapter</a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+    <div class="section-container" style="text-align:center;">
+        <span class="section-label">From the Fellowship</span>
+        <h2 class="section-title">What Our Members Say</h2>
+    </div>
+    <div class="testimonials-grid fade-in">
+        <div class="testimonial-card">
+            <blockquote>"I came for the archery and stayed for the brotherhood. Saturday mornings with these guys have transformed my walk with Christ."</blockquote>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">M</div>
+                <div>
+                    <div class="testimonial-name">Mike</div>
+                    <div class="testimonial-role">Cincinnati Chapter Member</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <blockquote>"My son and I joined together. It's given us something to share beyond just hunting — we're growing in faith side by side."</blockquote>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">J</div>
+                <div>
+                    <div class="testimonial-name">Jason</div>
+                    <div class="testimonial-role">Cincinnati Chapter Member</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <blockquote>"There's nothing like opening God's Word surrounded by His creation. Blessed to Hunt is church the way it was meant to be."</blockquote>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">D</div>
+                <div>
+                    <div class="testimonial-name">David</div>
+                    <div class="testimonial-role">Cincinnati Chapter Member</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1847,6 +2308,14 @@
 
 </main>
 
+<!-- ─── DONATE BANNER ─── -->
+<div class="donate-banner">
+    <div class="donate-banner-inner">
+        <p>Support our mission to grow faith and fellowship through the outdoors.</p>
+        <a href="mailto:info@blessedtohunt.com?subject=I'd%20like%20to%20donate%20to%20Blessed%20to%20Hunt" class="btn-donate">Support Our Mission</a>
+    </div>
+</div>
+
 <!-- ─── FOOTER ─── -->
 <footer>
     <div class="footer-container">
@@ -1955,6 +2424,38 @@
                     btn.style.background = '';
                     btn.disabled = false;
                     form.reset();
+                }, 3000);
+            } else {
+                btn.textContent = 'Error — Try Again';
+                btn.disabled = false;
+            }
+        }).catch(() => {
+            btn.textContent = 'Error — Try Again';
+            btn.disabled = false;
+        });
+    }
+
+    // Verse signup handler
+    function handleVerseSignup(e) {
+        e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('button');
+        const data = new FormData(form);
+
+        btn.textContent = 'Subscribing...';
+        btn.disabled = true;
+
+        fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                btn.textContent = 'Subscribed!';
+                form.reset();
+                setTimeout(() => {
+                    btn.textContent = 'Subscribe';
+                    btn.disabled = false;
                 }, 3000);
             } else {
                 btn.textContent = 'Error — Try Again';
